@@ -2,6 +2,7 @@ import { Box, Container, Image, Heading, Select, SimpleGrid, Text, LinkBox, Link
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import CardPokemons from '../cardPokemons'
+import ModalPoke from '../modalPoke'
 
 
 const Conteiner = () => {
@@ -58,7 +59,13 @@ const Conteiner = () => {
 
           <SimpleGrid columns="3" gap="25px" textTransform={'uppercase'}>
             {pokemons.map((pokemon) => (
-                <CardPokemons name={pokemon.data.name} imagem={pokemon.data.sprites.front_default} types={pokemon.data.types}/>
+                <CardPokemons
+                  id={pokemon.data.id} 
+                  name={pokemon.data.name} 
+                  types={pokemon.data.types}
+                  imagem={pokemon.data.sprites.front_default}
+                  agil={pokemon.data.stats} 
+                />
             ))}
           </SimpleGrid>
         </Container>

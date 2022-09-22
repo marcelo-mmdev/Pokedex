@@ -1,10 +1,14 @@
 import type { NextPage } from 'next'
-import Conteiner from '../components/conteiner'
+import ModalPoke from '../components'
+// import ModalPoke from '../components'
+// import Conteiner from '../components/conteiner'
+
 
 const Home: NextPage = () => {
   return (
     <>
-      <Conteiner />
+      <ModalPoke />
+      {/* <Conteiner /> */}
     </>
   )
 }
