@@ -12,13 +12,22 @@
     "@chakra-ui/react": "^2.3.1",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "apexcharts": "^3.35.5",
     "axios": "^0.27.2",
     "framer-motion": "^7.2.1",
     "next": "12.2.5",
+    "photoswipe": "^5.3.2",
     "react": "18.2.0",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "18.2.0",
+    "react-grid-gallery": "^1.0.0",
+    "react-hook-form": "^7.36.1",
+    "react-photo-album": "^1.16.1",
+    "react-photoswipe-gallery": "^2.2.2",
     "react-router-dom": "^6.4.0",
-    "react-select": "^5.4.0"
+    "react-select": "^5.4.0",
+    "simple-react-lightbox": "^3.6.9-0",
+    "yet-another-react-lightbox": "^2.1.1"
   },
   "devDependencies": {
     "@types/node": "18.7.14",
