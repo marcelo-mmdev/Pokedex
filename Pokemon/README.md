@@ -6,6 +6,7 @@ Nesse projeto temos
 [Chakra.ui](https://chakra-ui.com/)
 [Axios](https://axios-http.com/ptbr/)
 [React Icons](https://react-icons.github.io/react-icons/)
+[React Google Charts](https://www.react-google-charts.com/)
 [React Slick](https://react-slick.neostack.com/docs/get-started)
 [React Photo Album](https://www.npmjs.com/package/react-photo-album)
 [Simple React Lightbox](https://www.npmjs.com/package/simple-react-lightbox)
