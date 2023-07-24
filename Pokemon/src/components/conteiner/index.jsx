@@ -25,17 +25,14 @@ const Conteiner = () => {
   const getPokemons = () => {
     const endpoints = [];
     for (let i = 1; i < 152; i++) {
-      endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
+      endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
+      console.log("endpoints", endpoints);
     }
     const response = axios
       .all(endpoints.map((endpoints) => axios.get(endpoints)))
       .then((res) => setPokemons(res));
     console.log("endpoints", response);
-
-    // axios
-    // .get("https://pokeapi.co/api/v2/pokemon?limit=10")
-    // .then((res) => setPokemons(res.data.results))
-    // .catch((err) => console.log(err))
+    console.log("endpoints", endpoints);
   };
 
   const filtraPokemon = (name) => {
@@ -118,9 +115,11 @@ const Conteiner = () => {
           <SimpleGrid columns="3" gap="25px" textTransform={"uppercase"}>
             {pokemons.map((pokemon) => (
               <CardPokemons
+                id={pokemon.data.id}
                 name={pokemon.data.name}
-                imagem={pokemon.data.sprites.front_default}
+                imagem={pokemon.data.sprites.other.dream_world.front_default}
                 types={pokemon.data.types}
+                stats={pokemon.data.stats}
               />
             ))}
           </SimpleGrid>

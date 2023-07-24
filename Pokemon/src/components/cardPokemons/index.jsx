@@ -9,12 +9,32 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const CardPokemons = ({ name, imagem, types }) => {
+const CardPokemons = ({ name, imagem, types, id, stats }) => {
   const typepoke = () => {
     if (types[1]) {
       return types[0].type.name + "  /  " + types[1].type.name;
     }
     return types[0].type.name;
+  };
+  const forca = () => {
+    if (stats[0]) {
+      return stats[0].base_stat;
+    }
+  };
+  const ataque = () => {
+    if (stats[1]) {
+      return stats[1].base_stat;
+    }
+  };
+  const defesa = () => {
+    if (stats[2]) {
+      return stats[2].base_stat;
+    }
+  };
+  const agilidade = () => {
+    if (stats[5]) {
+      return stats[5].base_stat;
+    }
   };
 
   return (
@@ -70,25 +90,25 @@ const CardPokemons = ({ name, imagem, types }) => {
         <Box h="47%" display="flex">
           <Box fontSize={{ base: "8px", md: "10px", lg: "12px" }} color="#FFF">
             <Box>
-              <Text>Força:</Text>
+              <Text>N: {id}</Text>
             </Box>
             <Box>
-              <Text>Ataque:</Text>
+              <Text>Ataque: {ataque()}</Text>
             </Box>
             <Box>
-              <Text>Defesa:</Text>
+              <Text>Defesa: {defesa()}</Text>
             </Box>
             <Box>
-              <Text>Agilidade:</Text>
+              <Text>Agilidade: {agilidade()}</Text>
             </Box>
           </Box>
           <Box fontSize={{ base: "8px", md: "10px", lg: "12px" }} color="#FFF">
             <Box>
               <Text>{typepoke()}</Text>
             </Box>
-            <Box>
+            {/* <Box>
               <Text>{typepoke()}</Text>
-            </Box>
+            </Box> */}
           </Box>
         </Box>
       </LinkBox>
