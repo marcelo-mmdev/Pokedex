@@ -1,9 +1,55 @@
-import Conteiner from "../components/conteiner";
+import {
+  Box,
+  Container,
+  Image,
+  Heading,
+  Select,
+  SimpleGrid,
+  Text,
+  LinkBox,
+  LinkOverlay,
+  Flex,
+  Input,
+} from "@chakra-ui/react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import CardPokemon from "../../components/cardPokemon";
 
-export default function Test() {
+const CardPokemonsFull = () => {
+  const [pokemons, setPokemons] = useState([]);
+
+  useEffect(() => {
+    getPokemons();
+  }, []);
+
+  const getPokemons = () => {
+    const endpoints = [];
+    for (let i = 1; i < 152; i++) {
+      endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
+      console.log("endpoints", endpoints);
+    }
+    const response = axios
+      .all(endpoints.map((endpoints) => axios.get(endpoints)))
+      .then((res) => setPokemons(res));
+    console.log("endpoints", response);
+    console.log("endpoints", endpoints);
+  };
+
+  const filtraPokemon = (name) => {
+    const filtro = [];
+    if (name === "") {
+      getPokemons();
+    }
+    for (let i in pokemons) {
+      if (pokemons[i].data.name.includes(name)) {
+        filtro.push(pokemons[i]);
+      }
+    }
+    setPokemons(filtro);
+  };
+
   return (
     <>
-      <Conteiner />
       <Box
         padding="50px 0"
         bg={"#F3F7FC"}
@@ -68,10 +114,12 @@ export default function Test() {
 
           <SimpleGrid columns="3" gap="25px" textTransform={"uppercase"}>
             {pokemons.map((pokemon) => (
-              <CardPokemons
+              <CardPokemon
+                id={pokemon.data.id}
                 name={pokemon.data.name}
-                imagem={pokemon.data.sprites.front_default}
+                imagem={pokemon.data.sprites.other.dream_world.front_default}
                 types={pokemon.data.types}
+                stats={pokemon.data.stats}
               />
             ))}
           </SimpleGrid>
@@ -79,4 +127,6 @@ export default function Test() {
       </Box>
     </>
   );
-}
+};
+
+export default CardPokemonsFull;

@@ -1,12 +1,12 @@
-import type { NextPage } from 'next'
-import Conteiner from '../components/conteiner'
+import type { NextPage } from "next";
+import CardPokemonsFull from "../template/cardPokemonsFull";
 
 const Home: NextPage = () => {
   return (
     <>
-      <Conteiner />
+      <CardPokemonsFull />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
