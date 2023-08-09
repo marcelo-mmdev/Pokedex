@@ -1,10 +1,13 @@
 import type { NextPage } from "next";
-import CardPokemonsFull from "../template/cardPokemonsFull";
+
+import HomePokemons from "./homePokemons";
+import Card from "../components/card";
 
 const Home: NextPage = () => {
   return (
     <>
-      <CardPokemonsFull />
+      <HomePokemons />
+      {/* <Card /> */}
     </>
   );
 };

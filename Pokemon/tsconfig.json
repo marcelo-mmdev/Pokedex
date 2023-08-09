@@ -19,7 +19,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/pages/pagePoke/index.jsx"
+    "src/pages/pagePoke/index.jsx",
+    "src/pages/homePokemons/index.tsx"
   ],
   "exclude": ["node_modules"]
 }

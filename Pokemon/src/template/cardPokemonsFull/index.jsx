@@ -73,12 +73,13 @@ const CardPokemonsFull = () => {
           >
             <Image
               float="left"
-              src="./download.png"
+              src="./pokeball2.png"
               alt="Super Ofertas"
               w={"65px"}
               h={"50px"}
               margin="0 10px 0 20px"
             />
+
             <Heading
               as="h2"
               color={"#272B44"}
@@ -111,8 +112,30 @@ const CardPokemonsFull = () => {
           </Box>
 
           <Box sx={{ clear: "both" }} mb={"53px"}></Box>
-
-          <SimpleGrid columns="3" gap="25px" textTransform={"uppercase"}>
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <SimpleGrid
+              w="800px"
+              columns="3"
+              gap="25px"
+              textTransform={"uppercase"}
+            >
+              {pokemons.map((pokemon) => (
+                <CardPokemon
+                  id={pokemon.data.id}
+                  name={pokemon.data.name}
+                  imagem={pokemon.data.sprites.other.dream_world.front_default}
+                  types={pokemon.data.types}
+                  stats={pokemon.data.stats}
+                />
+              ))}
+            </SimpleGrid>
+          </Box>
+          {/* <SimpleGrid
+            w="800px"
+            columns="3"
+            gap="25px"
+            textTransform={"uppercase"}
+          >
             {pokemons.map((pokemon) => (
               <CardPokemon
                 id={pokemon.data.id}
@@ -122,7 +145,7 @@ const CardPokemonsFull = () => {
                 stats={pokemon.data.stats}
               />
             ))}
-          </SimpleGrid>
+          </SimpleGrid> */}
         </Container>
       </Box>
     </>
